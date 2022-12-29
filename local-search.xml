@@ -5,25 +5,6 @@
   
   <entry>
     <title>读论文（一）---“Learning Pixel-Level Semantic Affinity with Image-Level Supervision for Weakly Supervised Semantic Segmentation”</title>
-    <link href="/2022/12/29/title/"/>
-    <url>/2022/12/29/title/</url>
-    
-    <content type="html"><![CDATA[<h1 id="读论文（一）—“Learning-Pixel-Level-Semantic-Affinity-with-Image-Level-Supervision-for-Weakly-Supervised-Semantic-Segmentation”"><a href="#读论文（一）—“Learning-Pixel-Level-Semantic-Affinity-with-Image-Level-Supervision-for-Weakly-Supervised-Semantic-Segmentation”" class="headerlink" title="读论文（一）—“Learning Pixel-Level Semantic Affinity with Image-Level Supervision for Weakly Supervised Semantic Segmentation”"></a>读论文（一）—“Learning Pixel-Level Semantic Affinity with Image-Level Supervision for Weakly Supervised Semantic Segmentation”</h1><h2 id="一、该方法的主要框架"><a href="#一、该方法的主要框架" class="headerlink" title="一、该方法的主要框架"></a>一、该方法的主要框架</h2><pre><code class="hljs">    本文提出的方法主要分为三个部分    （1）作者提出了一个语义亲和度网络（文中的AffinityNet），首先通过原始图像生成CAM图，再用CAM图所提供的目标区域信息生成语义亲和度标签（说白了就是一张图里有蓝天白云，白云区域里面的像素两两的语义亲和度都很高，而白云区域里面抽出来一个像素，蓝天区域里面抽出来一个像素，这两个像素他们之间的语义亲和度就很低，具体后文会解释如何判断语义亲和度高低），有了语义亲和度标签以后就可以结合原始图片去训练这个语义亲和网络（AffinityNet），如下图所示。</code></pre><p><img src="/./%E8%AF%BB%E8%AE%BA%E6%96%87%EF%BC%88%E4%B8%80%EF%BC%89img1.jpg" alt="AffinityNet1"><br>        （2）</p>]]></content>
-    
-    
-    
-    <tags>
-      
-      <tag>weakly supervised semantic segmentation</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
-    <title>读论文（一）---“Learning Pixel-Level Semantic Affinity with Image-Level Supervision for Weakly Supervised Semantic Segmentation”</title>
     <link href="/2022/12/29/%E8%AF%BB%E8%AE%BA%E6%96%87%EF%BC%88%E4%B8%80%EF%BC%89---%E2%80%9CLearning%20Pixel-Level%20Semantic%20Affinity%20with%20Image-Level%20Supervision%20for%20Weakly%20Supervised%20Semantic%20Segmentation%E2%80%9D/"/>
     <url>/2022/12/29/%E8%AF%BB%E8%AE%BA%E6%96%87%EF%BC%88%E4%B8%80%EF%BC%89---%E2%80%9CLearning%20Pixel-Level%20Semantic%20Affinity%20with%20Image-Level%20Supervision%20for%20Weakly%20Supervised%20Semantic%20Segmentation%E2%80%9D/</url>
     
