@@ -25,8 +25,9 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://example.com/img/%E8%AF%BB%E8%AE%BA%E6%96%87%EF%BC%88%E4%B8%80%EF%BC%89img1.jpg">
 <meta property="og:image" content="http://example.com/img/%E8%AF%BB%E8%AE%BA%E6%96%87%EF%BC%88%E4%B8%80%EF%BC%89img2.jpg">
+<meta property="og:image" content="http://example.com/img/%E8%AF%BB%E8%AE%BA%E6%96%87%EF%BC%88%E4%B8%80%EF%BC%89img3.jpg">
 <meta property="article:published_time" content="2022-12-29T07:19:33.000Z">
-<meta property="article:modified_time" content="2022-12-29T10:34:54.685Z">
+<meta property="article:modified_time" content="2022-12-29T11:24:29.272Z">
 <meta property="article:author" content="TangJingfeng">
 <meta property="article:tag" content="weakly supervised semantic segmentation">
 <meta name="twitter:card" content="summary_large_image">
@@ -239,7 +240,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          546 字
+          853 字
         
       </span>
     
@@ -250,7 +251,7 @@
         
         
         
-          5 分钟
+          8 分钟
         
       </span>
     
@@ -313,8 +314,17 @@
 <h2 id="一、该方法的主要框架"><a href="#一、该方法的主要框架" class="headerlink" title="一、该方法的主要框架"></a>一、该方法的主要框架</h2><p>本文提出的方法主要分为三个部分</p>
 <p>（1）作者提出了一个语义亲和度网络（文中的AffinityNet），首先通过原始图像生成CAM图，再用CAM图所提供的目标区域信息生成语义亲和度标签（说白了就是一张图里有蓝天白云，白云区域里面的像素两两的语义亲和度都很高，而白云区域里面抽出来一个像素，蓝天区域里面抽出来一个像素，这两个像素他们之间的语义亲和度就很低，具体后文会解释如何判断语义亲和度高低），有了语义亲和度标签以后就可以结合原始图片去训练这个语义亲和网络（AffinityNet），如下图所示。</p>
 <p><img src="/img/%E8%AF%BB%E8%AE%BA%E6%96%87%EF%BC%88%E4%B8%80%EF%BC%89img1.jpg" srcset="/img/loading.gif" lazyload alt="图一"></p>
-<p>（2）经过训练的语义亲和度网络（AffinityNet）反过来预测局部图像区域内的语义相似性，这些语义相似性与随机游走相结合以修改CAM图</p>
+<p>（2）经过训练的语义亲和度网络（AffinityNet）反过来预测局部图像区域内的语义相似性，这些语义相似性与随机游走相结合以修改CAM图，并生成语义分割标签。</p>
 <p><img src="/img/%E8%AF%BB%E8%AE%BA%E6%96%87%EF%BC%88%E4%B8%80%EF%BC%89img2.jpg" srcset="/img/loading.gif" lazyload alt="图二"></p>
+<p>（3）用生成的语义分割标签去训练分割网络</p>
+<p><img src="/img/%E8%AF%BB%E8%AE%BA%E6%96%87%EF%BC%88%E4%B8%80%EF%BC%89img3.jpg" srcset="/img/loading.gif" lazyload alt="图三"></p>
+<h2 id="二、框架中的方法详解"><a href="#二、框架中的方法详解" class="headerlink" title="二、框架中的方法详解"></a>二、框架中的方法详解</h2><h3 id="（一）CAM图的生成"><a href="#（一）CAM图的生成" class="headerlink" title="（一）CAM图的生成"></a>（一）CAM图的生成</h3><p>论文中作者说</p>
+<p>$$</p>
+<p>\begin{aligned}</p>
+<pre><code class="hljs">\lim\limits_&#123;n\to\infty&#125; \int_&#123;-\pi&#125;^&#123;\pi&#125;\frac&#123;n! \cdot2^&#123;2n cos\phi&#125;&#125;&#123;\Bigg|\displaystyle\prod_&#123;k=1&#125;^n(2ne^&#123;i\phi&#125;-\kappa)\Bigg|&#125;d\phi = 2\pi
+</code></pre>
+<p>\end{aligned}</p>
+<p>$$</p>
 
                 
               </div>
